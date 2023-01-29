@@ -1,0 +1,1 @@
+1674959361965|9|statement|connection 3|url jdbc:h2:tcp://localhost/~/jpashop|select item0_.id as id1_0_0_ from item item0_ where item0_.id=?|select item0_.id as id1_0_0_ from item item0_ where item0_.id='A'

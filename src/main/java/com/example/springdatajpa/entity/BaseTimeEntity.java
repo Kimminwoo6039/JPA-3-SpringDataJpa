@@ -10,8 +10,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
-@EntityListeners(AuditingEntityListener.class)
-@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)  // 이거없으면 등록일자 생성 안됨..
+@MappedSuperclass // 읽기
 @Getter
 public class BaseTimeEntity {
 

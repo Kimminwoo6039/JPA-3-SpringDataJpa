@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)  // 이거없으면 등록일자 생성 안됨..
 @MappedSuperclass
 @Getter
 public class BaseEntity extends BaseTimeEntity{
