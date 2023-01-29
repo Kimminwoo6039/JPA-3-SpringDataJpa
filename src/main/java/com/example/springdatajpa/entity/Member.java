@@ -7,8 +7,16 @@ import javax.persistence.*;
 @Entity
 @Getter @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // 기본생성자 proteted 같은거
+@NamedQuery(
+        name = "Member.findByUsername",
+        query = "select m from Member m where m.username = :username"
+)
+@NamedEntityGraph(
+        name = "Member.all",
+        attributeNodes = @NamedAttributeNode("team")
+)
 @ToString(of = {"id","username","age"}) // team 쓰면 연관관계 까지 출력됨...... 가급적이면 연관관계는 안쓰자..
-public class Member {
+public class Member extends BaseEntity {
 
     @Id @GeneratedValue // pk 값을 jpa 가 알아서 해줌
     @Column(name = "member_id")
